@@ -1,0 +1,7 @@
+{
+  "name": "calculadora-trl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
