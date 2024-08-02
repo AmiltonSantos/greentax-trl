@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonContent, IonSlides } from '@ionic/angular';
-import { AbstractControl, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
+import { IonContent, ModalController, IonSlides } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { ThanksPage } from '../thanks/thanks.page';
 
 @Component({
     selector: 'app-checkout',
@@ -43,7 +45,8 @@ export class CheckoutPage implements OnInit {
         return this.billingForm.get('address');
     }
 
-    constructor() {
+    constructor(private router: Router,
+        private modalCtrl: ModalController) {
     }
 
     ngOnInit() {
@@ -56,9 +59,16 @@ export class CheckoutPage implements OnInit {
     }
 
     buildSlides() {
-        const slides = ['Projeto', 'TRL1', 'TRL2', 'TRL3', 'TRL4', 'TRL5', 'TRL6', 'TRL7', 'TRL8', 'TRL9'];
+        const slides = ['Projeto', 'TRL1', 'TRL2', 'TRL3', 'TRL4', 'TRL5', 'TRL6', 'TRL7', 'TRL8', 'TRL9', ''];
         this.currentSlide = slides[0];
         this.slides = slides;
+    }
+
+    async next() {
+        const modal = await this.modalCtrl.create({
+            component: ThanksPage
+        });
+        await modal.present();
     }
 
     setupForm() {
@@ -98,7 +108,7 @@ export class CheckoutPage implements OnInit {
         this.ionContent.scrollToTop();
     }
 
-    onNextButtonTouched() {
+    async onNextButtonTouched() {
 
         if (this.currentSlide === 'Projeto') {
 

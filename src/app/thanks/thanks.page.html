@@ -1,33 +1,27 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title>Thank you</ion-title>
+    <ion-title>Resultados</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" style="zoom:0.7; padding-left: 15px; padding-right: 15px; font-size: 2em;"
+        (click)="touchVoltarModal()">
+      </ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <canvas #barCanvas></canvas>
+</ion-content>
 
+<ion-content>
   <div class="flex-center">
-
     <ion-icon name="checkmark-circle" color="success"></ion-icon>
     <div class="ion-padding">
       <ion-text color="dark">
         <h2 class="bold">
-          Order Successfully Placed
+          Concluido com sucesso!
         </h2>
-        <p>
-          Your payment has been processed and your order is complete.
-        </p>
       </ion-text>
     </div>
-
-    <div style="width: 300px; margin: 0 auto">
-      <div class="ion-margin-vertical">
-        <ion-button size="large" shape="round" color="dark" expand="block" [routerLink]="['/']">
-          Go home
-        </ion-button>
-      </div>
-    </div>
-
   </div>
-
 </ion-content>
