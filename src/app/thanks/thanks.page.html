@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title><b>GreenTax</b></ion-title>
+    <ion-title><b>GreenTax TRL</b></ion-title>
     <ion-buttons slot="start">
       <ion-icon name="arrow-back" style="zoom:0.7; padding-left: 15px; padding-right: 15px; font-size: 2em;"
         (click)="touchVoltarModal()">
@@ -11,7 +11,9 @@
 
 <ion-content>
   <ion-card>
-    <ion-label>{{trl1}}</ion-label>
+    <ion-item lines="none">
+      <span style="text-align: justify;">{{trl1}}</span>
+    </ion-item>
   </ion-card>
   <canvas #barCanvas></canvas>
 </ion-content>
