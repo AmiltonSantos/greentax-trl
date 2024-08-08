@@ -9,6 +9,7 @@ import { Chart } from 'chart.js';
 })
 export class ThanksPage implements AfterViewInit, OnInit {
     @ViewChild('barCanvas', { static: false }) barCanvas: ElementRef;
+    @ViewChild('footer') footer: ElementRef;
     dataTrl1 = Math.floor(Math.random() * 101);
     dataTrl2 = Math.floor(Math.random() * 101);
     dataTrl3 = Math.floor(Math.random() * 101);
