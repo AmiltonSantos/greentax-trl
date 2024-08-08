@@ -60,8 +60,8 @@ export class ThanksPage implements AfterViewInit {
 
     ngAfterViewInit() {
         const modalElement = this.barCanvas.nativeElement.closest('.modal-wrapper');
-        modalElement.style.setProperty('--width', '90%');
-        modalElement.style.setProperty('--height', '90%');
+        modalElement.style.setProperty('--width', '95%');
+        modalElement.style.setProperty('--height', '95%');
         this.getBarChart();
     }
 
