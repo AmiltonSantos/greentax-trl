@@ -50,6 +50,9 @@ export class ThanksPage implements AfterViewInit {
     constructor(private modalCtrl: ModalController) { }
 
     ngAfterViewInit() {
+        const modalElement = this.barCanvas.nativeElement.closest('.modal-wrapper');
+        modalElement.style.setProperty('--width', '90%');
+        modalElement.style.setProperty('--height', '90%');
         this.getBarChart();
     }
 
@@ -74,6 +77,27 @@ export class ThanksPage implements AfterViewInit {
                     responsive: true,
                     maintainAspectRatio: false
                 }
+                // options: {
+                //     responsive: true, // Definindo a responsividade do gráfico
+                //     maintainAspectRatio: false,
+                //     legend: {
+                //         labels: {
+                //             fontColor: 'white' // Definindo a cor da legenda como branco
+                //         }
+                //     },
+                //     scales: {
+                //         xAxes: [{
+                //             ticks: {
+                //                 fontColor: 'white' // Cor do texto das labels no eixo X
+                //             }
+                //         }],
+                //         yAxes: [{
+                //             ticks: {
+                //                 fontColor: 'white' // Cor do texto das labels no eixo Y
+                //             }
+                //         }]
+                //     }
+                // }
             });
         }
     }
