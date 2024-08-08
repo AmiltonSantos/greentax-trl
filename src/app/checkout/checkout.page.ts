@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent, ModalController, IonSlides } from '@ionic/angular';
-import { Router } from '@angular/router';
 import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ThanksPage } from '../thanks/thanks.page';
 
@@ -45,8 +44,7 @@ export class CheckoutPage implements OnInit {
         return this.billingForm.get('address');
     }
 
-    constructor(private router: Router,
-        private modalCtrl: ModalController) {
+    constructor(private modalCtrl: ModalController) {
     }
 
     ngOnInit() {
