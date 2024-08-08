@@ -9,6 +9,15 @@ import { Chart } from 'chart.js';
 })
 export class ThanksPage implements AfterViewInit {
     @ViewChild('barCanvas', { static: false }) barCanvas: ElementRef;
+    dataTrl1 = Math.floor(Math.random() * 101);
+    dataTrl2 = Math.floor(Math.random() * 101);
+    dataTrl3 = Math.floor(Math.random() * 101);
+    dataTrl4 = Math.floor(Math.random() * 101);
+    dataTrl5 = Math.floor(Math.random() * 101);
+    dataTrl6 = Math.floor(Math.random() * 101);
+    dataTrl7 = Math.floor(Math.random() * 101);
+    dataTrl8 = Math.floor(Math.random() * 101);
+    dataTrl9 = Math.floor(Math.random() * 101);
 
     trl1 = `TRL1: Com base nos cálculos elaborados pela calculadora de maturidade tecnológica Greentax, a tecnologia analisada (SE FOR POSSÍVEL LINKAR O NOME DA TECNOLOGIA PRA APRECER), proposta pela instituição (SE FOR POSSÍVEL LINKAR O NOME DA INSTIUIÇÃO PROPONETE), que tem como pesquisador responsável (SE FOR POSSÍVEL LINKAR O NOME DO PESQUISADOR RESPONSÁVEL), se encontra em “TRL 1”, em “NÍVEL 1” para Vale S.A com conceito de “PESQUISA BÁSICA”. O resultado da análise é narrado a seguir, detalhando o status atual da tecnologia:
             Os princípios básicos da tecnologia foram formulados, e potenciais aplicações foram identificadas. Embora ainda não existam definições conceituais detalhadas ou requisitos de desempenho, a pesquisa acadêmica já aponta para a relevância do desenvolvimento.
@@ -66,8 +75,8 @@ export class ThanksPage implements AfterViewInit {
                 data: {
                     labels: ['TRL1', 'TRL2', 'TRL3', 'TRL4', 'TRL5', 'TRL6', 'TRL7', 'TRL8', 'TRL9'],
                     datasets: [{
-                        label: 'Resultado Calculadora TRL',
-                        data: [10, 20, 30, 40, 50, 60, 70, 80, 90],
+                        label: 'Resultado TRL',
+                        data: [this.dataTrl1, this.dataTrl2, this.dataTrl3, this.dataTrl4, this.dataTrl5, this.dataTrl6, this.dataTrl7, this.dataTrl8, this.dataTrl9],
                         backgroundColor: [
                             '#21273D', '#FF5733', '#2A6EDA', '#FFC300', '#8C80A5', '#FF5733', '#C6C0B8', '#FFC300', '#AF0F6C'
                         ]
@@ -75,16 +84,16 @@ export class ThanksPage implements AfterViewInit {
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false
+                    maintainAspectRatio: false,
+                    legend: {
+                        labels: {
+                            fontColor: 'blue' // Definindo a cor da legenda como branco
+                        }
+                    }
                 }
                 // options: {
                 //     responsive: true, // Definindo a responsividade do gráfico
                 //     maintainAspectRatio: false,
-                //     legend: {
-                //         labels: {
-                //             fontColor: 'white' // Definindo a cor da legenda como branco
-                //         }
-                //     },
                 //     scales: {
                 //         xAxes: [{
                 //             ticks: {
