@@ -129,3 +129,20 @@
 .bold {
   font-weight: bold;
 }
+
+ion-content {
+  --background: url('/assets/imgs/background.png') no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+ion-item {
+  --background: transparent;
+  padding-left: 10px;
+}
