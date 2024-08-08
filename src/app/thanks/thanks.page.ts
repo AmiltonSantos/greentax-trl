@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { Component, ViewChild, ElementRef, AfterViewInit, OnInit } from "@angular/core";
 import { ModalController } from '@ionic/angular';
 import { Chart } from 'chart.js';
 
@@ -7,7 +7,7 @@ import { Chart } from 'chart.js';
     templateUrl: "./thanks.page.html",
     styleUrls: ["./thanks.page.scss"],
 })
-export class ThanksPage implements AfterViewInit {
+export class ThanksPage implements AfterViewInit, OnInit {
     @ViewChild('barCanvas', { static: false }) barCanvas: ElementRef;
     dataTrl1 = Math.floor(Math.random() * 101);
     dataTrl2 = Math.floor(Math.random() * 101);
@@ -57,6 +57,16 @@ export class ThanksPage implements AfterViewInit {
             A tecnologia está madura e totalmente comissionada, pronta para comercialização e operação sustentável no ambiente real. O modelo de negócio é estabelecido, e a tecnologia cumpre sua missão designada. A tecnologia é segura e pronta para Transferência em caso de interesse da instituição proponente.`;
 
     constructor(private modalCtrl: ModalController) { }
+
+    ngOnInit() {
+        window.addEventListener('resize', () => {
+          if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+            document.getElementById('footer').classList.add('move-up');
+          } else {
+            document.getElementById('footer').classList.remove('move-up');
+          }
+        });
+    }
 
     ngAfterViewInit() {
         const modalElement = this.barCanvas.nativeElement.closest('.modal-wrapper');

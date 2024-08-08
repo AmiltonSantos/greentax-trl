@@ -77,3 +77,8 @@ input {
   object-fit: cover;
   display: block;
 }
+
+.move-up {
+  transform: translateY(-100px); /* Mova o footer para cima */
+  transition: transform 0.3s; /* Adicione uma transição suave */
+}
