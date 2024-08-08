@@ -75,7 +75,7 @@ export class ThanksPage implements AfterViewInit {
                 data: {
                     labels: ['TRL1', 'TRL2', 'TRL3', 'TRL4', 'TRL5', 'TRL6', 'TRL7', 'TRL8', 'TRL9'],
                     datasets: [{
-                        label: 'Resultado TRL',
+                        label: 'Percentual',
                         data: [this.dataTrl1, this.dataTrl2, this.dataTrl3, this.dataTrl4, this.dataTrl5, this.dataTrl6, this.dataTrl7, this.dataTrl8, this.dataTrl9],
                         backgroundColor: [
                             '#21273D', '#FF5733', '#2A6EDA', '#FFC300', '#8C80A5', '#FF5733', '#C6C0B8', '#FFC300', '#AF0F6C'
@@ -83,30 +83,29 @@ export class ThanksPage implements AfterViewInit {
                     }]
                 },
                 options: {
-                    responsive: true,
+                    responsive: true, // Definindo a responsividade do gráfico
                     maintainAspectRatio: false,
                     legend: {
                         labels: {
-                            fontColor: 'blue' // Definindo a cor da legenda como branco
+                            fontColor: 'blue' // Cor do texto da legenda
                         }
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontColor: 'blue' // Cor do texto das labels no eixo X
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                fontColor: 'green', // Cor do texto das labels no eixo Y
+                                callback: (value: number) => {
+                                    return value + '%'; // Adiciona o símbolo de porcentagem
+                                }
+                            }
+                        }]
                     }
                 }
-                // options: {
-                //     responsive: true, // Definindo a responsividade do gráfico
-                //     maintainAspectRatio: false,
-                //     scales: {
-                //         xAxes: [{
-                //             ticks: {
-                //                 fontColor: 'white' // Cor do texto das labels no eixo X
-                //             }
-                //         }],
-                //         yAxes: [{
-                //             ticks: {
-                //                 fontColor: 'white' // Cor do texto das labels no eixo Y
-                //             }
-                //         }]
-                //     }
-                // }
             });
         }
     }
