@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent, ModalController, IonSlides } from '@ionic/angular';
 import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ThanksPage } from '../thanks/thanks.page';
@@ -13,7 +13,6 @@ export class CheckoutPage implements OnInit {
     @ViewChild(IonContent, { static: true }) ionContent: IonContent;
     @ViewChild(IonSlides, { static: false }) ionSlides: IonSlides;
     @ViewChild('billingFormRef', { static: false }) billingFormRef: NgForm;
-    @ViewChild('footer') footer: ElementRef;
 
     public billingForm: FormGroup;
     public checkboxForm: FormGroup;
@@ -49,13 +48,6 @@ export class CheckoutPage implements OnInit {
     }
 
     ngOnInit() {
-        window.addEventListener('resize', () => {
-            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
-              document.getElementById('footer').classList.add('move-up');
-            } else {
-              document.getElementById('footer').classList.remove('move-up');
-            }
-        });
         this.setupForm();
         this.buildSlides();
     }
