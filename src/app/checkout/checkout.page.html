@@ -49,7 +49,7 @@
                   <ion-col>
                     <ion-item lines="none">
                       <ion-label position="stacked">Título do projeto</ion-label>
-                      <ion-input type="text" formControlName="first_name"></ion-input>
+                      <ion-input style="text-transform: uppercase;" type="text" formControlName="first_name" (ngModelChange)="tituloProjeto=$event"></ion-input>
                     </ion-item>
                     <ion-text color="danger">
                       <span class="text-tiny"
@@ -64,7 +64,7 @@
                   <ion-col>
                     <ion-item lines="none">
                       <ion-label position="stacked">Instituição proponente</ion-label>
-                      <ion-input type="text" formControlName="last_name"></ion-input>
+                      <ion-input style="text-transform: uppercase;" type="text" formControlName="last_name" (ngModelChange)="instituicaoProjeto=$event"></ion-input>
                     </ion-item>
                     <ion-text color="danger">
                       <span class="text-tiny"
@@ -79,7 +79,7 @@
                   <ion-col>
                     <ion-item lines="none">
                       <ion-label position="stacked">Pesquisador responsável</ion-label>
-                      <ion-input type="email" formControlName="email"></ion-input>
+                      <ion-input style="text-transform: uppercase;" type="text" formControlName="email" (ngModelChange)="pesquisadorProjeto=$event"></ion-input>
                     </ion-item>
                     <ion-text color="danger">
                       <span class="text-tiny"
@@ -94,7 +94,7 @@
                   <ion-col>
                     <ion-item lines="none">
                       <ion-label position="stacked">Pessoa que preencheu o formulário</ion-label>
-                      <ion-input type="email" formControlName="email"></ion-input>
+                      <ion-input style="text-transform: uppercase;" type="text" formControlName="email"></ion-input>
                     </ion-item>
                     <ion-text color="danger">
                       <span class="text-tiny"
@@ -109,7 +109,7 @@
                   <ion-col>
                     <ion-item lines="none">
                       <ion-label position="stacked">Descrição do projeto</ion-label>
-                      <ion-input type="text" formControlName="address"></ion-input>
+                      <ion-input style="text-transform: uppercase;" type="text" formControlName="address"></ion-input>
                     </ion-item>
                     <ion-text color="danger">
                       <span class="text-tiny"

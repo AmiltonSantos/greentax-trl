@@ -25,6 +25,9 @@ export class CheckoutPage implements OnInit {
     private nbTrl7 = 0;
     private nbTrl8 = 0;
     private nbTrl9 = 0;
+    public tituloProjeto: string;
+    public instituicaoProjeto: string;
+    public pesquisadorProjeto: string;
 
     public slidesOpts = {
         allowTouchMove: false,
@@ -82,7 +85,10 @@ export class CheckoutPage implements OnInit {
                 trl6: this.nbTrl6,
                 trl7: this.nbTrl7,
                 trl8: this.nbTrl8,
-                trl9: this.nbTrl9
+                trl9: this.nbTrl9,
+                tituloProjeto: this.tituloProjeto,
+                instituicaoProjeto: this.instituicaoProjeto,
+                pesquisadorProjeto: this.pesquisadorProjeto
             }
         });
         await modal.present();
