@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import { Component, ViewChild, ElementRef, AfterViewInit, Input } from "@angular/core";
 import { ModalController } from '@ionic/angular';
 import { Chart } from 'chart.js';
 
@@ -8,16 +8,16 @@ import { Chart } from 'chart.js';
     styleUrls: ["./thanks.page.scss"],
 })
 export class ThanksPage implements AfterViewInit {
+    @Input() trl1: number;
+    @Input() trl2: number;
+    @Input() trl3: number;
+    @Input() trl4: number;
+    @Input() trl5: number;
+    @Input() trl6: number;
+    @Input() trl7: number;
+    @Input() trl8: number;
+    @Input() trl9: number;
     @ViewChild('barCanvas', { static: false }) barCanvas: ElementRef;
-    dataTrl1 = Math.floor(Math.random() * 101);
-    dataTrl2 = Math.floor(Math.random() * 101);
-    dataTrl3 = Math.floor(Math.random() * 101);
-    dataTrl4 = Math.floor(Math.random() * 101);
-    dataTrl5 = Math.floor(Math.random() * 101);
-    dataTrl6 = Math.floor(Math.random() * 101);
-    dataTrl7 = Math.floor(Math.random() * 101);
-    dataTrl8 = Math.floor(Math.random() * 101);
-    dataTrl9 = Math.floor(Math.random() * 101);
 
     trl: string;
     trls: string[] = [
@@ -84,7 +84,7 @@ export class ThanksPage implements AfterViewInit {
                     labels: ['TRL1', 'TRL2', 'TRL3', 'TRL4', 'TRL5', 'TRL6', 'TRL7', 'TRL8', 'TRL9'],
                     datasets: [{
                         label: 'Percentual',
-                        data: [this.dataTrl1, this.dataTrl2, this.dataTrl3, this.dataTrl4, this.dataTrl5, this.dataTrl6, this.dataTrl7, this.dataTrl8, this.dataTrl9],
+                        data: [this.trl1, this.trl2, this.trl3, this.trl4, this.trl5, this.trl6, this.trl7, this.trl8, this.trl9],
                         backgroundColor: [
                             '#21273D', '#FF5733', '#2A6EDA', '#FFC300', '#8C80A5', '#FF5733', '#C6C0B8', '#FFC300', '#AF0F6C'
                         ]
