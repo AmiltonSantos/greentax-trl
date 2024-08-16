@@ -28,6 +28,7 @@ export class CheckoutPage implements OnInit {
     public tituloProjeto: string;
     public instituicaoProjeto: string;
     public pesquisadorProjeto: string;
+    public observacao: string = '';
 
     public slidesOpts = {
         allowTouchMove: false,
@@ -39,20 +40,24 @@ export class CheckoutPage implements OnInit {
     public isBeginning: boolean = true;
     public isEnd: boolean = false;
 
-    get billingFirstName(): AbstractControl {
-        return this.billingForm.get('first_name');
+    get billingTitulo(): AbstractControl {
+        return this.billingForm.get('titulo');
     }
 
-    get billingLastName(): AbstractControl {
-        return this.billingForm.get('last_name');
+    get billingInstituicao(): AbstractControl {
+        return this.billingForm.get('instituicao');
     }
 
-    get billingEmail(): AbstractControl {
-        return this.billingForm.get('email');
+    get billingResponsavel(): AbstractControl {
+        return this.billingForm.get('responsavel');
     }
 
-    get billingAddress(): AbstractControl {
-        return this.billingForm.get('address');
+    get billingPreencheu(): AbstractControl {
+        return this.billingForm.get('preencheu');
+    }
+
+    get billingDescricao(): AbstractControl {
+        return this.billingForm.get('descricao');
     }
 
     constructor(private modalCtrl: ModalController) {
@@ -95,24 +100,13 @@ export class CheckoutPage implements OnInit {
     }
 
     setupForm() {
-
         this.billingForm = new FormGroup({
-            first_name: new FormControl('', Validators.required),
-            last_name: new FormControl('', Validators.required),
-            email: new FormControl('', Validators.required),
-            address: new FormControl('', Validators.required),
+            titulo: new FormControl('', Validators.required),
+            instituicao: new FormControl('', Validators.required),
+            responsavel: new FormControl('', Validators.required),
+            preencheu: new FormControl('', Validators.required),
+            descricao: new FormControl('', Validators.required),
         });
-    }
-
-    customValidator(control: AbstractControl): { [key: string]: any } | null {
-        const sCheck1 = control.get('sCheck1');
-        const nCheck1 = control.get('nCheck1');
-
-        if (!sCheck1.value && !nCheck1.value) {
-            return { required: true };
-        }
-
-        return null; // Caso contrário, não há erro
     }
 
     async onSlidesChanged() {
@@ -132,23 +126,19 @@ export class CheckoutPage implements OnInit {
     }
 
     async onNextButtonTouched() {
-
         if (this.currentSlide === 'Projeto') {
-
             this.billingFormRef.onSubmit(undefined);
-
             if (this.billingForm.valid) {
                 this.ionSlides.slideNext();
                 this.ionContent.scrollToTop();
             }
-
         } else {
             this.ionSlides.slideNext();
             this.ionContent.scrollToTop();
         }
     }
 
-    ck(item: string, chk: string) {
+    public ck(item: string, chk: string) {
         if (chk === 'ck1' && item === 'SIM') {
             this.nbTrl1 = 11.11;
         } else if (chk === 'ck1' && item === 'NAO') {
@@ -156,7 +146,7 @@ export class CheckoutPage implements OnInit {
         }
 
         if (chk === 'ck16' && item === 'SIM') {
-            this.nbTrl2 = 11.11 *2 ;
+            this.nbTrl2 = 11.11 * 2;
         } else if (chk === 'ck16' && item === 'NAO') {
             this.nbTrl2 = 0;
         }
@@ -168,7 +158,7 @@ export class CheckoutPage implements OnInit {
         }
 
         if (chk === 'ck40' && item === 'SIM') {
-            this.nbTrl4 = 11.11 *4;
+            this.nbTrl4 = 11.11 * 4;
         } else if (chk === 'ck40' && item === 'NAO') {
             this.nbTrl4 = 0;
         }
@@ -202,5 +192,9 @@ export class CheckoutPage implements OnInit {
         } else if (chk === 'ck81' && item === 'NAO') {
             this.nbTrl9 = 0;
         }
+    }
+
+    public tamanhoMaximoTexto(value: string) {
+        this.observacao = value;
     }
 }
