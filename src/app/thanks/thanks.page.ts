@@ -69,8 +69,36 @@ export class ThanksPage implements AfterViewInit {
     }
 
     getRandomTrl(): string {
-        const randomIndex = Math.floor(Math.random() * this.trls.length);
-        return this.trls[randomIndex];
+        let valorTrl = 0;
+        if (this.trl1 > 0) {
+            valorTrl = 0;
+        }
+        if (this.trl2 > 0) {
+            valorTrl = 1;
+        }
+        if (this.trl3 > 0) {
+            valorTrl = 2;
+        }
+        if (this.trl4 > 0) {
+            valorTrl = 3;
+        }
+        if (this.trl5 > 0) {
+            valorTrl = 4;
+        }
+        if (this.trl6 > 0) {
+            valorTrl = 5;
+        }
+        if (this.trl7 > 0) {
+            valorTrl = 6;
+        }
+        if (this.trl8 > 0) {
+            valorTrl = 7;
+        }
+        if (this.trl9 > 0) {
+            valorTrl = 8;
+        }
+
+        return this.trls[valorTrl];
     }
 
     getBarChart() {
